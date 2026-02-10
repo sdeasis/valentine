@@ -47,7 +47,7 @@
   <h2>Will you be my Valentine? 💖</h2>
 
   <button id="yesBtn" onclick="sayYes()">Yes</button>
-  <button id="noBtn" onclick="trickNo()">No</button>
+  <button id="noBtn" onclick="pressNo()">No</button>
 
   <p id="result"></p>
 </div>
@@ -58,11 +58,22 @@ function sayYes() {
     "YAY!!! 💘 See you on Valentine’s Day!";
 }
 
-function trickNo() {
-  // Sneaky part – clicking NO actually triggers YES
-  sayYes();
+function pressNo() {
+  let sure = confirm("Are you SURE you want to press no? 🥺");
+
+  if (sure) {
+    // They said YES they are sure
+    document.getElementById("result").innerHTML =
+      "Too bad 😈 See you on the 14th!";
+  } else {
+    // They said NO they are NOT sure → ask again
+    document.getElementById("result").innerHTML =
+      "Okay okay 😌 So... will you be my Valentine? 💕";
+  }
 }
 </script>
 
 </body>
 </html>
+
+
